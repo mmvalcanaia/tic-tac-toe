@@ -55,13 +55,12 @@ public class Board {
 		moves[move.getRow()][move.getColumn()] = move;
 	}
 
-	public int checkVictory(Move[][] moves) {
+	public Integer checkVictory(Move[][] moves) {
 		//row 1
 		if (moves[0][0] != null && moves[0][1] != null && moves[0][2] != null) {
 			if (moves[0][0].getPlayer() == moves[0][1].getPlayer()
 					&& moves[0][0].getPlayer() == moves[0][2].getPlayer()) {
 				System.out.println();
-				System.out.println(getMoves()[0][0].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -69,8 +68,6 @@ public class Board {
 		if (moves[1][0] != null && moves[1][1] != null && moves[1][2] != null) {
 			if (moves[1][0].getPlayer() == moves[1][1].getPlayer()
 					&& moves[1][0].getPlayer() == moves[1][2].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[1][0].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -78,8 +75,6 @@ public class Board {
 		if (moves[2][0] != null && moves[2][1] != null && moves[2][2] != null) {
 			if (moves[2][0].getPlayer() == moves[2][1].getPlayer()
 					&& moves[2][0].getPlayer() == moves[2][2].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[2][0].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -88,8 +83,6 @@ public class Board {
 		if (moves[0][0] != null && moves[1][0] != null && moves[2][0] != null) {
 			if (moves[0][0].getPlayer() == moves[1][0].getPlayer()
 					&& moves[0][0].getPlayer() == moves[2][0].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[0][0].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -97,8 +90,6 @@ public class Board {
 		if (moves[0][1] != null && moves[1][1] != null && moves[2][1] != null) {
 			if (moves[0][1].getPlayer() == moves[1][1].getPlayer()
 					&& moves[0][1].getPlayer() == moves[2][1].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[0][1].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -106,8 +97,6 @@ public class Board {
 		if (moves[0][2] != null && moves[1][2] != null && moves[2][2] != null) {
 			if (moves[0][2].getPlayer() == moves[1][2].getPlayer()
 					&& moves[0][2].getPlayer() == moves[2][2].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[0][2].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -115,8 +104,6 @@ public class Board {
 		if (moves[0][0] != null && moves[1][1] != null && moves[2][2] != null) {
 			if (moves[0][0].getPlayer() == moves[1][1].getPlayer()
 					&& moves[0][0].getPlayer() == moves[2][2].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[0][0].getPlayer() + " won!");
 				return 1;
 			}
 		}
@@ -124,8 +111,6 @@ public class Board {
 		if (moves[0][2] != null && moves[1][1] != null && moves[2][0] != null) {
 			if (moves[0][2].getPlayer() == moves[1][1].getPlayer()
 					&& moves[0][2].getPlayer() == moves[2][0].getPlayer()) {
-				System.out.println();
-				System.out.println(getMoves()[0][2].getPlayer() + " won!");
 				return 1;
 			}
 		} 
@@ -136,13 +121,11 @@ public class Board {
 					counter++;
 				}
 				if (counter == 9) {
-					System.out.println();
-					System.out.println("Tie!");
 					return 2;
 				}
 			}
 		}
-		return 0;
+		return null;
 	}
 
 }

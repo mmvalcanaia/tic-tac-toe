@@ -17,9 +17,8 @@ public class Program {
 		int column = 0;
 		int row = 0;
 		int round = 0;
-		int result = t.checkVictory(t.getMoves());
 
-		while (result == 0) {
+		while (t.checkVictory(t.getMoves()) == null) {
 			sc = new Scanner(System.in);
 			System.out.println();
 			System.out.print("Player " + t.changePlayer(round));
@@ -46,7 +45,18 @@ public class Program {
 			}
 			System.out.println();
 			t.printBoard();
-			result = t.checkVictory(t.getMoves());
+			
+
+			if (t.checkVictory(t.getMoves()) != null) {
+				if (t.checkVictory(t.getMoves()) == 1) {
+					System.out.println();
+					System.out.println(t.changePlayer(round) + " won!");
+				}
+				else if (t.checkVictory(t.getMoves()) == 2) {
+					System.out.println();
+					System.out.println("Tie!");
+				}
+			}
 			round++;
 			t.changePlayer(round);
 			}
