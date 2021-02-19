@@ -60,7 +60,6 @@ public class Board {
 		if (moves[0][0] != null && moves[0][1] != null && moves[0][2] != null) {
 			if (moves[0][0].getPlayer() == moves[0][1].getPlayer()
 					&& moves[0][0].getPlayer() == moves[0][2].getPlayer()) {
-				System.out.println();
 				return 1;
 			}
 		}
@@ -127,5 +126,11 @@ public class Board {
 		}
 		return null;
 	}
-
+	
+	// https://stackoverflow.com/questions/2979383/java-clear-the-console
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
+	}	
+	
 }

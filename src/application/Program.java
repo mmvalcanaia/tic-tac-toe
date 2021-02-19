@@ -10,6 +10,7 @@ public class Program {
 
 	public static void main(String[] args) {
 
+		Board.clearScreen();
 		Scanner sc = new Scanner(System.in);
 		Board t = new Board();
 		Move move;
@@ -17,9 +18,8 @@ public class Program {
 		int column = 0;
 		int row = 0;
 		int round = 0;
-
+		
 		while (t.checkVictory(t.getMoves()) == null) {
-			sc = new Scanner(System.in);
 			System.out.println();
 			System.out.print("Player " + t.changePlayer(round));
 			System.out.println();
@@ -44,9 +44,9 @@ public class Program {
 				t.makeMove(move);
 			}
 			System.out.println();
+			Board.clearScreen();
 			t.printBoard();
 			
-
 			if (t.checkVictory(t.getMoves()) != null) {
 				if (t.checkVictory(t.getMoves()) == 1) {
 					System.out.println();
@@ -66,6 +66,7 @@ public class Program {
 			catch(InputMismatchException e) {
 				System.out.println("The entered value is invalid, try again!");
 			}	
+			
 		}
 		sc.close();
 	}
